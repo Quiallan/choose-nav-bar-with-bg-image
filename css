@@ -1,0 +1,267 @@
+/*Navbar.CSS*/
+
+/* Global Navbar Styles. The .top-bar and .bottom-bar classes share these styles */
+.top-bar, .bottom-bar {
+  width: 100%;  /* Takes full width of the parent container */
+  display: flex;  /* Uses flexbox layout to align child elements */
+  justify-content: space-between;  /* Space child elements evenly */
+  align-items: center;  /* Center align items vertically */
+  padding: 0 20px;  /* Add horizontal padding of 20px */
+}
+/* -------------------------------------------------Top Bar--------------------------------------------------------------------------------- */ 
+
+/* Global Top bar styles */
+.top-bar {
+  background-color: #000; /*rgb(2, 2, 27);   Sets background color */
+  height: 80px;  /* Sets height to 80px */
+}
+/* -------------------------------------------------Column 1 - Scrolling Text --------------------------------------------------------------------------------- */ 
+
+/* Scrolling text */
+.scrolling-text {
+  background: linear-gradient(to right, red, blue);  /* Background gradient */
+  -webkit-background-clip: text;  /* Clip background to text */
+  color: transparent;  /* Make text transparent to show background */
+  white-space: nowrap;  /* Prevent text from wrapping */
+  overflow: hidden;  /* Hide overflow */
+  width: 225px;  /* Fixed width */
+  text-align: center;  /* Center align text */
+  font-size: 18px;  /* Font size */
+}
+/* -------------------------------------------------Column 2 - Text Slider --------------------------------------------------------------------------------- */ 
+
+/* Text slider */
+.text-slider {
+  color: #0f0;  /* Text color */
+  width: 300px;  /* Fixed width */
+  text-align: center;  /* Center align text */
+  font-size: 18px;  /* Font size */
+}
+/* Quote sliding animation */ 
+@keyframes moveUp {
+  0% {
+    opacity: 0; /* Starts invisible */
+    transform: translateY(100%);  /* Starts from below */
+  }
+  100% {
+    opacity: 1; /* Ends fully visible */
+    transform: translateY(0); /* Ends at its original position */
+  }
+}
+/* -------------------------------------------------Column 3 - Toggle Switch --------------------------------------------------------------------------------- */ 
+
+/* Mode switch / Toggle Switch for Light and Dark Mode */
+.mode-switch {
+  position: relative;  /* Establishes stacking context */
+  margin-right: 50px;  /* Adds margin to the right */
+}
+/* Toggle switch */
+.slider {
+  width: 50px;  /* Fixed width */
+  height: 25px;  /* Fixed height */
+  border-radius: 25px;  /* Rounded corners */
+  background: linear-gradient(to right, red, blue);  /* Background gradient */
+  position: relative;  /* Establishes stacking context */
+}
+/* Styles for the .circle class *//* Replaced ::before with actual div */
+.circle {
+  position: absolute;  /* Absolute positioning */
+  width: 20px;  /* Fixed width */
+  height: 20px;  /* Fixed height */
+  background: grey;  /* Background color */
+  border-radius: 50%;  /* Rounded corners */
+  top: 2.5px;  /* Y-position */
+  left: 2.5px;  /* X-position */
+  box-shadow: 0 5px 0 0 white, 0 -5px 0 0 white;  /* Box shadow */
+  transition: left 0.3s ease-in-out;  /* Transition effect for 'left' property for a smooth transition */
+}
+/* Styles for the .toggle-label class */
+.toggle-label {
+  color: white;  /* Text color */
+  position: absolute;  /* Absolute positioning */
+  bottom: -20px;  /* Y-position */
+  font-size: 14px;  /* Font size */
+}
+/* -------------------------------------------------Bottom Bar--------------------------------------------------------------------------------- */
+/* Global Bottom bar */
+.bottom-bar {
+  background-color: rgba(255, 2, 2, 0.455); /* Background color */
+  height: 80px; /* Fixed height of bottom bar */
+}
+/* -------------------------------------------------Column 1 - Logo --------------------------------------------------------------------------------- */
+/* Logo */
+.logo {
+  height: 50px; /* Fixed height */
+  margin-left: 10px; /* Margin to the left */
+}
+/* -------------------------------------------------Column 2 - Nav List --------------------------------------------------------------------------------- */
+/* Horizontal menu/ nav list */
+.nav-list {
+  list-style: none; /* No bullet points */
+  display: flex; /* Flex layout */
+  justify-content: center; /* Center items horizontally */
+  width: 100%; /* Full width */
+}
+/* Link styles within .bottom-bar */
+.bottom-bar a {
+  color: white;  /* Text color */
+  text-decoration: none;  /* No underline */
+  margin-right: 40px;  /* Margin to the right */
+  letter-spacing: -0.5px;  /* Adjust letter spacing */
+  font-size: 25px;  /* Font size */
+}
+/* Hover styles for links in .bottom-bar */
+.bottom-bar a:hover {
+  color: red;/* Text color changes to red */
+}
+
+/*New CSS for Toggle Mobile Menu**********************************88*/
+*{
+  box-sizing: border-box;
+}
+html{
+min-width: 360px;
+}
+body{
+  font-family: 'Righteous', cursive;
+  padding: 0;
+  margin: 0;
+  background:url('https://c.wallhere.com/photos/e6/f5/nature_landscape_atmosphere_mountains_mist_trees_morning_dark-90067.jpg!d');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  min-width: 360px;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#333;
+  color: #fff;
+ min-width: 360px;
+  
+ /* height: 10vh;*/
+}
+.nav-list {
+  height: 100%;
+}
+
+
+.nav-list ul{
+  display: flex;
+  padding: 0;
+  margin: 0;
+  margin-right: 60px;  
+}
+.nav-list li{
+  list-style: none;
+}
+.nav-list a{
+  text-decoration: none;
+  color:#fff;
+  padding: 1rem;
+  display:block;
+
+}
+
+.nav-list li:hover{
+  background-color:#555 ;
+}
+.toggle-button{
+  position: absolute;
+  top: .75rem;
+  right:3rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  
+}
+.toggle-button .bar{
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  transition: all 0.5s ease-in;;
+}
+
+@media screen and (max-width:663px){
+  .toggle-button{
+      display: flex;
+  }
+  .nav-list {
+     display: none;
+     width: 100%;/* c pour avoir tt la largeur quand on hover*/
+     opacity: 0;
+     visibility: hidden;
+     -webkit-transition: opacity 600ms, visibility 600ms;
+transition: opacity 600ms, visibility 600ms;
+  }
+  nav{
+      flex-direction: column;
+      align-items:flex-start;
+  }
+
+  nav .nav-list ul{
+      flex-direction: column;
+      margin-right: 0px; 
+      width: 100%;
+  }
+  ul li{
+      text-align: center;
+      opacity: 0;
+  }
+  .nav-list a{
+      padding: .5rem 1rem;
+  }
+  .active{
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+  }
+}
+
+
+
+.trg .a1{
+  /*background-color: blue;*/
+  transform: rotate(-60deg) translate(-5px,6px);
+  position: absolute;
+  left: -9px;
+  
+}
+.trg .a2{
+  /*background: blue;*/
+  transform: rotate(60deg) translate(-5px,6px);
+  position: absolute;
+  left:15px;
+  top:8px
+}
+.trg .a3{
+  /*background-color: blue;*/
+  /*transform: rotate(-45deg) translate(-5px,6px);*/
+  position: absolute;
+  top:20px;
+  left:1px;
+}
+
+@keyframes navLinkFade{
+  from{
+      opacity: 0;
+      transform:translate(50px);
+  }
+  to{
+      opacity: 1;
+      transform: translate(0px);
+  }
+}
+
+@media screen and (max-width:360px){
+nav{
+  flex-direction:column;
+  flex-direction: column;
+}
+}
